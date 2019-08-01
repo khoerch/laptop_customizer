@@ -43,7 +43,8 @@ class App extends Component {
 			<Heading />      
 			<main>
 				<Specs 
-					features={this.props.features}
+          features={this.props.features}
+          selected={this.state.selected}
 					updateFeature={this.updateFeature}/>
 				<Costs 
 					selected={this.state.selected}/>

@@ -9,8 +9,11 @@ class Specs extends Component {
                 const options = this.props.features[key].map((item, index) => {
                     return (
                         <SpecItem 
+                            key={key}
                             index={index}
-                            item={item}/>
+                            item={item}
+                            selected={this.props.selected}
+                            updateFeature={this.props.updateFeature}/>
                     )
                 });
 
