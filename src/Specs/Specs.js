@@ -7,7 +7,6 @@ class Specs extends Component {
         const features = Object.keys(this.props.features)
             .map(key => {
                 const options = this.props.features[key].map((item, index) => {
-                    console.log(key);
                     return (
                         <SpecItem 
                             keys={key}
