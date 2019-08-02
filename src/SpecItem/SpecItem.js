@@ -27,18 +27,15 @@ import './SpecItem.css';
 
 class SpecItem extends Component {
     render() {
-        const selectedClass = () => {
-            console.log(this.props.selected);
-            this.props.item.name === this.props.selected[this.props.index].name ? 'feature__selected' : '';
-        }
+        const selectedClass = (this.props.item.name === this.props.selected[this.props.index].name ? 'feature__selected' : '');
 
-        const featureClass = 'feature__option ' + selectedClass();
+        const featureClass = 'feature__option ' + selectedClass;
 
         return (
             <li key={this.props.index} className="feature__item">
                 <div 
                     className={featureClass}
-                    onClick={e => this.updateFeature(this.props.key, this.props.item)}>
+                    onClick={e => this.props.updateFeature(this.props.key, this.props.item)}>
                     { this.props.item.name }
                     ({ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'})
                       .format(this.props.item.cost) })
